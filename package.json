@@ -3,19 +3,44 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.812.0",
+    "@react-three/drei": "^10.0.8",
+    "@react-three/fiber": "^9.1.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.9.0",
+    "chart.js": "^4.4.9",
+    "cors": "^2.8.5",
+    "crypto-browserify": "^3.12.1",
+    "express": "^5.1.0",
+    "face-api.js": "^0.22.2",
+    "firebase": "^11.7.3",
+    "lottie-react": "^2.4.1",
+    "path-browserify": "^1.0.1",
     "react": "^19.1.0",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^6.30.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "stream-browserify": "^3.0.0",
+    "three": "^0.176.0",
+    "util": "^0.12.5",
+    "web-vitals": "^2.1.4",
+    "ws": "^8.18.2"
   },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "concurrently": "^8.2.2"
+  },
+  "proxy": "http://localhost:4123",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "serve-local": "node local-save-server.js",
+    "dev": "concurrently -n FRONT,SERVER -c green,cyan \"npm run start\" \"npm run serve-local\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
